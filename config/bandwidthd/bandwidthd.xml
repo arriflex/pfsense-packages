@@ -143,7 +143,6 @@
 			<type>checkbox</type>
 			<default_value>on</default_value>
 		</field>
-		
 		<field>
                		<fielddescr>Enable database option</fielddescr>
                		<fieldname>enabledatabase</fieldname>
