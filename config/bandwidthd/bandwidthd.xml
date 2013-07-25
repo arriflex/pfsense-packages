@@ -143,6 +143,47 @@
 			<type>checkbox</type>
 			<default_value>on</default_value>
 		</field>
+		
+		<field>
+               		<fielddescr>Enable database option</fielddescr>
+               		<fieldname>enabledatabase</fieldname>
+			<type>checkbox</type>
+			<description>Check to enter postgresql credentials for dynamically creating graphs from an external database</description>
+		</field>              
+		<field>
+			<fielddescr>PostgreSQL User</fielddescr>
+			<fieldname>postgresqluser</fieldname>
+			<description>The user role to authenticate with on a postgresql server.</description>
+			<type>input</type>
+			<default_value>bandwidthdpgsql</default_value>
+		</field>
+		<field>
+			<fielddescr>PostgreSQL Password</fielddescr>
+			<fieldname>postgresqlpass</fieldname>
+			<description>The password used to connect to a postgresql server.</description>
+			<type>password</type>
+		</field>    
+		<field>
+			<fielddescr>Database Name</fielddescr>
+			<fieldname>postgresqldbname</fieldname>
+			<description>The name of a bandwidthd database hosted on a postgresql server.</description>
+			<type>input</type>
+			<default_value>bandwidthdpgsqldb</default_value>
+		</field>    
+		<field>
+			<fielddescr>Host</fielddescr>
+			<fieldname>postgresqlhost</fieldname>
+			<description>The postgresql hosting server for bandwidthd to connect to. Don't forget to add pfSense to pg_hba.conf on the host server.</description>
+			<type>input</type>
+		</field>    
+		<field>
+			<fielddescr>Sensor Name</fielddescr>
+			<fieldname>sensorid</fieldname>
+			<description>A nice name for this sensor to display in the bandwidthd web interface.</description>
+			<type>input</type>
+			<default_value>pfsense</default_value>
+		</field>		
+
 		<field>
 			<fielddescr>Meta Refresh</fielddescr>
 			<fieldname>meta_refresh</fieldname>
