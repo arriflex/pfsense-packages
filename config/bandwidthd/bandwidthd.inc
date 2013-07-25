@@ -170,6 +170,23 @@ $subnets
 $dev
 
 ###################################################
+# Options for postgresql database logging.
+# Standard postgres connect string, just like php, see postgres docs for
+# details
+# Somewhere I read once that the following guide line can cause problems 
+# even with the comment string leading it. 
+# pgsql_connect_string "user = someuser dbname = mydb host = localhost"
+
+pgsql_connect_string "user = $postgresql_user password = $postgresql_pass dbname = $postgresql_dbname host = $postgresql_host"
+
+
+# Arbitrary sensor name, I recommend the sensors fully qualified domain
+# name
+#sensor_id "sensor1.localhost.localdomain"
+
+"$sensor_id"sensor_id
+
+###################################################
 # Options that don't usually get changed
 
 # An interval is 2.5 minutes, this is how many
