@@ -73,6 +73,27 @@ function bandwidthd_install_config() {
 		$graph = "graph true\n";
 	else
 		$graph = "graph false\n";
+	
+	$enable_database = $bandwidthd_config['enabledatabase'];
+	if($enable_database)
+		$enable_database = "pgsql_connect_string";
+	else
+		$enable_database = "# pgsql_connect_string";
+	$postgresql_user = $postgresql_user['postgresqluser'];
+	if($postgresql_user)
+		$postgresql_user = "$postgresql_user";
+	$postgresql_pass = $postgresql_pass['postgresqlpass'];
+	if($postgresql_pass)
+		$postgresql_pass = "$postgresql_pass";
+	$postgresql_dbname = $postgresql_dbname['postgresqldbname'];
+	if($postgresql_dbname)
+		$postgresql_dbname = "$postgresql_dbname";
+	$postgresql_host = $postgresql_host['postgresqlhost'];
+	if($postgresql_host)
+		$postgresql_host = "postgresql_host";
+	$sensor_id = $sensor_id['postgresqldbname'];
+	if($sensor_id)
+		$sensor_id = "sensor_id \"$sensor_id\"\n";
 
 	$filter_text = $bandwidthd_config['filter'];
 	if($filter_text)
@@ -177,14 +198,14 @@ $dev
 # even with the comment string leading it. 
 # pgsql_connect_string "user = someuser dbname = mydb host = localhost"
 
-pgsql_connect_string "user = $postgresql_user password = $postgresql_pass dbname = $postgresql_dbname host = $postgresql_host"
+$pgsql_connect_string "user = $postgresql_user password = $postgresql_pass dbname = $postgresql_dbname host = $postgresql_host"
 
 
 # Arbitrary sensor name, I recommend the sensors fully qualified domain
 # name
 #sensor_id "sensor1.localhost.localdomain"
 
-"$sensor_id"sensor_id
+$sensor_id
 
 ###################################################
 # Options that don't usually get changed
